@@ -54,3 +54,59 @@ Application will be teatable
 
 When the user hit the home page there will be 2 links one for pets and one for the individual.  Once the user clicks the link, they will be redirected to their saved color scheme page, there will be seperate saved paged for pets and people. If there are saved results, the user can update or delete their saved color schemes.  Otherwise the user can go to the search page and search for a color harmony and save if they like the color scheme.
 
+# THE COLOR WHEEL API
+
+## Vision
+
+```
+  The purpose of The Color Wheel API is to provide a one stop resource for developers
+  color needs.
+```
+
+## Scope In
+```
+  The API will provide the developer with a color palette based on a color request.
+  The API will provide the developer with a variety of color harmonies.
+  The API will let the developer know if a color scheme matches a requested color palette.
+```
+
+## Scope Out
+```
+   The API will not give the developer all of the color palettes in a single route.
+```
+
+## MVP
+
+```
+   The Web Developer can send a color to an endpoint and receive a color palette.
+   The Web Developer can send multiple colors to and endpoint and receive verification
+   on whether or not the colors belong to a palette.
+```
+
+## Stretch
+```
+  -Take in hex color codes.
+  -Return hex color codes.
+  -Implementation of color formula to add colors dynamically.
+  -Image processing.
+  -Return image examples.
+  -Create endpoints for specific categories of color usage.
+```
+
+## Functional Requirements
+```
+  -The Web Developer can send requests to an endpoint and receive a palette.
+  -The Web Developer can send requests to an endpoint and receive a boolean response.
+```
+
+## Non-Functional Requirements
+
+```
+  -The palette tables are connected.
+```
+
+## Data Flow
+```
+  The Web Developer sends color/s to an endpoint and receives a JSON object.
+```
+
