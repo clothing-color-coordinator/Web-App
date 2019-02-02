@@ -36,6 +36,6 @@ My Pet Results
 
 ## Web App Database Wireframes
 
-![colormatchdb](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/colormatchdb.png)
+![colormatchdb](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/colormatchdb.JPG)
 
 The database contains two tables: one for the individual user and another for their pet.  The individual has 0-1: 1 relationsip with the pet using the primary id from the pet as a foreign key.
