@@ -7,14 +7,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ColorScheme.Models;
+using ColorScheme.Models.Interfaces;
 
 namespace ColorScheme.Controllers
 {
     public class UserController : Controller
     {
-        private readonly ColorSchemeDbContext _context;
+        private readonly UserManager _context;
 
-        public UserController(ColorSchemeDbContext context)
+        public UserController(UserManager context)
         {
             _context = context;
         }
@@ -25,7 +26,7 @@ namespace ColorScheme.Controllers
         /// <returns></returns>
         public async Task<IActionResult> Index()
         {
-            return View(await _context.User.ToListAsync());
+            return View(await _context.GetUsers());
         }
 
         /// <summary>
@@ -35,8 +36,7 @@ namespace ColorScheme.Controllers
         /// <returns></returns>
         public async Task<IActionResult> Details(int id)
         {
-            var user = await _context.User
-                .FirstOrDefaultAsync(u => u.ID == id);
+            var user = await _context.GetOneuser(id);
             if (user == null)
             {
                 return NotFound();
@@ -65,8 +65,7 @@ namespace ColorScheme.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(user);
-                await _context.SaveChangesAsync();
+                await _context.CreateUser(user);
                 return RedirectToAction(nameof(Index));
             }
             return View(user);
@@ -79,8 +78,8 @@ namespace ColorScheme.Controllers
         /// <returns></returns>
         public async Task<IActionResult> Edit(int id)
         {
-           
-            var user = await _context.User.FindAsync(id);
+
+            var user = await _context.UpdateOne(id);
             if (user == null)
             {
                 return NotFound();
@@ -101,8 +100,8 @@ namespace ColorScheme.Controllers
             {
                 try
                 {
-                    _context.Update(user);
-                    await _context.SaveChangesAsync();
+
+                    await _context.Updateuser(user);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -128,8 +127,7 @@ namespace ColorScheme.Controllers
         public async Task<IActionResult> Delete(int id)
         {
          
-            var user = await _context.User
-                .FirstOrDefaultAsync(u => u.ID == id);
+            var user = await _context.DeleteOne(id);
 
             if (user == null)
             {
@@ -148,17 +146,7 @@ namespace ColorScheme.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var user = await _context.User.FindAsync(id);
-            _context.User.Remove(user);
-
-            var children = _context.colorScheme.Where(f => f.UserID == id);
-
-            foreach (var i in children)
-            {
-                _context.colorScheme.Remove(i);
-            }
-
-            await _context.SaveChangesAsync();
+            await _context.DeleteUser(id);
             return RedirectToAction(nameof(Index));
         }
 
@@ -169,7 +157,7 @@ namespace ColorScheme.Controllers
         /// <returns>True or False</returns>
         private bool UserExists(int id)
         {
-            return _context.User.Any(i => i.ID == id);
+            return _context.UserExist(id);
         }
 
 
