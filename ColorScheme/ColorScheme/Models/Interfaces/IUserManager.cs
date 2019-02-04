@@ -8,22 +8,22 @@ namespace ColorScheme.Models.Interfaces
     public interface IUserManager
     {
         //Creates new instance of User
-        Task CreateUser(User user);
+        Task CreateUser(UserM user);
 
         //displays all Userss
-        Task<IEnumerable<User>> GetUsers();
+        Task<IEnumerable<UserM>> GetUsers();
 
         //Displays details of User
-        Task<User> GetOneuser(int id);
+        Task<UserM> GetOneuser(int id);
 
         //displays update view
-        Task<User> UpdateOne(int id);
+        Task<UserM> UpdateOne(int id);
 
         //allows user to update properties
-        Task Updateuser(User user);
+        Task Updateuser(UserM user);
 
         //displays delete view
-        Task<User> DeleteOne(int id);
+        Task<UserM> DeleteOne(int id);
 
         //deletes User and all children
         Task DeleteUser(int ID);
