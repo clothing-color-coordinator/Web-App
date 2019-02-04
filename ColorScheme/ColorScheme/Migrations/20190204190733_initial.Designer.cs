@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ColorScheme.Migrations
 {
     [DbContext(typeof(ColorSchemeDbContext))]
-    [Migration("20190204180822_initial")]
+    [Migration("20190204190733_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
