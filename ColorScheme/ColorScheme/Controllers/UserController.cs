@@ -64,7 +64,7 @@ namespace ColorScheme.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name")] User user)
+        public async Task<IActionResult> Create([Bind("ID,Name")] UserM user)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace ColorScheme.Controllers
         /// <param name="id"></param>
         /// <param name="user"></param>
         /// <returns></returns>
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name")] UserM user)
         {
             
             if (ModelState.IsValid)
