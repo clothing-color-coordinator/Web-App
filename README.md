@@ -30,9 +30,6 @@ My Results
 
 ![myHuman Results](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/3-myHuman-Results.png)
 
-My Pet Results
-
-![myPet Results](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/4-myPet-Results.png)
 
 ## Web App Database Wireframes
 
