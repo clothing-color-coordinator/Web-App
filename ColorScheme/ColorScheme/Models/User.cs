@@ -12,5 +12,7 @@ namespace ColorScheme.Models
         public int ID { get; set; }
 
         public string Name { get; set; }
+
+        ICollection<ColorSchemeM> colorSchemes { get; set; }
     }
 }
