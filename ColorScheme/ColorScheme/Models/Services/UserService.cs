@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ColorScheme.Models.Services
 {
-    public class UserService : UserManager
+    public class UserService : IUserManager
     {
         /// <summary>
         /// Bring in the DB
