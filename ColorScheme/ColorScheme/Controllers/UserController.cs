@@ -13,9 +13,12 @@ namespace ColorScheme.Controllers
 {
     public class UserController : Controller
     {
-        private readonly UserManager _context;
+        /// <summary>
+        /// Brings in Interface and methods
+        /// </summary>
+        private readonly IUserManager _context;
 
-        public UserController(UserManager context)
+        public UserController(IUserManager context)
         {
             _context = context;
         }

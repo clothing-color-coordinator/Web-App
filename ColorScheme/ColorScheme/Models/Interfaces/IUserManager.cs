@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ColorScheme.Models.Interfaces
 {
-    public interface UserManager
+    public interface IUserManager
     {
         //Creates new instance of User
         Task CreateUser(User user);
