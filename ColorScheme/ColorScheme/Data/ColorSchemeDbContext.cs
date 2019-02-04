@@ -19,7 +19,7 @@ namespace ColorScheme.Data
 
         }
 
-        public DbSet<User> User { get; set; }
+        public DbSet<UserM> User { get; set; }
 
         public DbSet<ColorSchemeM> colorScheme { get; set; }
 

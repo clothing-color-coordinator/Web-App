@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorScheme", "ColorScheme\ColorScheme.csproj", "{D57FCD3F-F7B2-4103-BB26-EB810438D099}"
+
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{F51670BC-8B51-4A15-80FF-4FED9689F50A}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,10 @@ Global
 		{D57FCD3F-F7B2-4103-BB26-EB810438D099}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D57FCD3F-F7B2-4103-BB26-EB810438D099}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D57FCD3F-F7B2-4103-BB26-EB810438D099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F51670BC-8B51-4A15-80FF-4FED9689F50A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F51670BC-8B51-4A15-80FF-4FED9689F50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F51670BC-8B51-4A15-80FF-4FED9689F50A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F51670BC-8B51-4A15-80FF-4FED9689F50A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

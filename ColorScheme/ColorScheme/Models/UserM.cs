@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ColorScheme.Models
 {
-    public class User
+    public class UserM
     {
         public int ID { get; set; }
 

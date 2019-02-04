@@ -26,7 +26,7 @@ namespace ColorScheme.Models.Services
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public async Task CreateUser(User user)
+        public async Task CreateUser(UserM user)
         {
             _context.Add(user);
             await _context.SaveChangesAsync();
@@ -37,7 +37,7 @@ namespace ColorScheme.Models.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<User> DeleteOne(int id)
+        public async Task<UserM> DeleteOne(int id)
         {
             return await _context.User.FindAsync(id);
         }
@@ -67,7 +67,7 @@ namespace ColorScheme.Models.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<User> GetOneuser(int id)
+        public async Task<UserM> GetOneuser(int id)
         {
             return await _context.User.FirstOrDefaultAsync(u => u.ID == id);
         }
@@ -76,7 +76,7 @@ namespace ColorScheme.Models.Services
         /// Gets all users and sends to View
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<User>> GetUsers()
+        public async Task<IEnumerable<UserM>> GetUsers()
         {
             return await _context.User.ToListAsync();
         }
@@ -86,7 +86,7 @@ namespace ColorScheme.Models.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<User> UpdateOne(int id)
+        public async Task<UserM> UpdateOne(int id)
         {
             return await _context.User.FindAsync(id);
         }
@@ -96,7 +96,7 @@ namespace ColorScheme.Models.Services
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public async Task Updateuser(User user)
+        public async Task Updateuser(UserM user)
         {
             _context.Update(user);
             await _context.SaveChangesAsync();
