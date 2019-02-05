@@ -13,7 +13,7 @@ namespace ColorScheme.Models
 
         public int UserID { get; set; }
 
-        public int SchemeType { get; set; }
+        public string SchemeType { get; set; }
 
         public string ColorSchemes { get; set; }
 
@@ -24,11 +24,11 @@ namespace ColorScheme.Models
     public enum SchemeType
     {
         [Display(Name = "Complementary")]
-        typeOne = 0,
+        ComplimentaryPalette,
         [Display(Name = "Analogous")]
-        typeTwo = 1,
+        AnalogousPalette,
         [Display(Name = "Triadic")]
-        typeThree = 2
+        TriadicPalette 
 
     }
 }

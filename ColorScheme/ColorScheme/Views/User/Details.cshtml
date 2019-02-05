@@ -1,7 +1,7 @@
-﻿@model IEnumerable<ColorScheme.Models.ColorSchemeM>
+﻿@model ColorScheme.Models.UserM
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Details";
     Layout = "_Layout";
 }
 
@@ -9,28 +9,25 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.SchemeType)
+                @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ColorSchemes)
-            </th>
-
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        if (Model.colorSchemes != null)
+        {
+        @foreach (var item in Model.colorSchemes)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.SchemeType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ColorSchemes)
+                    @Html.DisplayFor(modelItem => item)
                 </td>
                 <td>
                     <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
                 </td>
             </tr>
         }
+        }
+
     </tbody>
 </table>

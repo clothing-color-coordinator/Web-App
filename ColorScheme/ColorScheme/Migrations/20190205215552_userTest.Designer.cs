@@ -4,14 +4,16 @@ using ColorScheme.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ColorScheme.Migrations
 {
     [DbContext(typeof(ColorSchemeDbContext))]
-    partial class ColorSchemeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190205215552_userTest")]
+    partial class userTest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
