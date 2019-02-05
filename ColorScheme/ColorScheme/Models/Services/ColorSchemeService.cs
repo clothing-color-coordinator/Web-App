@@ -74,14 +74,5 @@ namespace ColorScheme.Models.Services
             await _context.SaveChangesAsync();
         }
 
-        /// <summary>
-        /// Checks to see if instance of Color Scheme exisits
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public bool ColorSchemeExist(int id)
-        {
-            return _context.colorScheme.Any(i => i.ID == id);
-        }
     }
 }
