@@ -35,7 +35,7 @@ namespace ColorScheme.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<IActionResult> Details(int id)
+        //public async Task<IActionResult> Details(int id);
 
         [HttpGet]
         public async Task<IActionResult> Results(string SchemeType, string color)
