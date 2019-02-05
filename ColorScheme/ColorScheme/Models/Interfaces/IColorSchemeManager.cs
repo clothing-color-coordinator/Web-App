@@ -23,7 +23,6 @@ namespace ColorScheme.Models.Interfaces
         //deletes ColorScheme
         Task DeleteColorScheme(int ID);
 
-        //checks if instance exists
-        bool ColorSchemeExist(int id);
+       
     }
 }
