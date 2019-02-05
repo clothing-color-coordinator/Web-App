@@ -92,14 +92,6 @@ namespace ColorScheme.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        /// <summary>
-        /// Checks to see if instance of ColorSchemeM exists
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns>True or False</returns>
-        private bool ColorSchemeExists(int id)
-        {
-            return _context.ColorSchemeExist(id);
-        }
+      
     }
 }
