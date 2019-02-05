@@ -1,5 +1,26 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model ColorScheme.Models.UserM
+
+@{ 
+    ViewData["Title"] = "Delete";
 }
+
+<h1>Delete</h1>
+
+<h3>Are You Sure You Want To Delete?</h3>
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(Model => Model.Name)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID"/>
+        <input type="submit" value="Delete" class="btn btn-danger"/>
+        <a asp-action="Index">Back To List</a>
+    </form>
+</div>
