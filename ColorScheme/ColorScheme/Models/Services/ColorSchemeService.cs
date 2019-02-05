@@ -43,16 +43,6 @@ namespace ColorScheme.Models.Services
         }
 
         /// <summary>
-        /// Displays the details of one Color Scheme
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<ColorSchemeM> GetOneColorScheme(int id)
-        {
-            return await _context.colorScheme.FirstOrDefaultAsync(u => u.ID == id);
-        }
-
-        /// <summary>
         /// Prompt are you sure warning when delete is selected
         /// </summary>
         /// <param name="id"></param>
