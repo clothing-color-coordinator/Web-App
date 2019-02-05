@@ -23,8 +23,11 @@ namespace ColorScheme.Models
     //enum
     public enum SchemeType
     {
+        [Display(Name = "Complementary")]
         typeOne = 0,
+        [Display(Name = "Analogous")]
         typeTwo = 1,
+        [Display(Name = "Triadic")]
         typeThree = 2
 
     }
