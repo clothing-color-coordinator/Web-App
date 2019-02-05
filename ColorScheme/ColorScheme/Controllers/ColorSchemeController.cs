@@ -23,8 +23,23 @@ namespace ColorScheme.Controllers
         }
 
 
+
+        public async Task <IActionResult> Index()
+        {
+            //return View(await _context.GetColorSchemes());
+            return View();
+        }
+
+        /// <summary>
+        /// Displays the details of the Color Scheme
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<IActionResult> Details(int id)
+
         [HttpGet]
         public async Task<IActionResult> Results(string SchemeType, string color)
+
         {
             using (var client = new HttpClient())
             {

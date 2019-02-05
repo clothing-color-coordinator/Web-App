@@ -26,16 +26,18 @@ namespace ColorScheme.Migrations
 
                     b.Property<string>("ColorSchemes");
 
-                    b.Property<int>("SchemeType");
+                    b.Property<string>("SchemeType");
 
-                    b.Property<int>("UserID");
+                    b.Property<int>("UserMID");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("UserMID");
 
                     b.ToTable("colorScheme");
                 });
 
-            modelBuilder.Entity("ColorScheme.Models.User", b =>
+            modelBuilder.Entity("ColorScheme.Models.UserM", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -46,6 +48,14 @@ namespace ColorScheme.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("ColorScheme.Models.ColorSchemeM", b =>
+                {
+                    b.HasOne("ColorScheme.Models.UserM")
+                        .WithMany("colorSchemes")
+                        .HasForeignKey("UserMID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
