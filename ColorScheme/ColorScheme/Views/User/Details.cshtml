@@ -1,5 +1,36 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<ColorScheme.Models.ColorSchemeM>
+
 @{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
 }
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SchemeType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ColorSchemes)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SchemeType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ColorSchemes)
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -23,8 +23,8 @@ namespace ColorScheme.Controllers
 
         public async Task <IActionResult> Index()
         {
-            return View(await _context.GetColorSchemes());
-            
+            //return View(await _context.GetColorSchemes());
+            return View();
         }
 
         /// <summary>
