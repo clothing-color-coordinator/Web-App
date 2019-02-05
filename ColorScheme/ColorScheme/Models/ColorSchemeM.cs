@@ -16,7 +16,6 @@ namespace ColorScheme.Models
         public string SchemeType { get; set; }
 
         public string ColorSchemes { get; set; }
-
         
     }
 

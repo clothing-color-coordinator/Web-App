@@ -31,11 +31,11 @@ namespace XUnitTestProject1
             //Arrange
             ColorSchemeM color = new ColorSchemeM();
             color.ID = 1;
-            color.SchemeType = 0;
+            color.SchemeType = "TriadicPalette";
 
 
             //Assert
-            Assert.Equal(0, color.SchemeType);
+            Assert.Equal("TriadicPalette", color.SchemeType);
 
         }
 
@@ -45,7 +45,7 @@ namespace XUnitTestProject1
             //Arrange
             ColorSchemeM color = new ColorSchemeM();
             color.ID = 1;
-            color.SchemeType = 0;
+            color.SchemeType = "TriadicPalette";
 
             //Act
             color.ID = 2;
@@ -61,13 +61,13 @@ namespace XUnitTestProject1
             //Arrange
             ColorSchemeM color = new ColorSchemeM();
             color.ID = 1;
-            color.SchemeType = 0;
+            color.SchemeType = "ComplementaryPalette";
 
             //Act
-            color.SchemeType = 1;
+            color.SchemeType = "TriadicPalette";
 
             //Assert
-            Assert.Equal(1, color.SchemeType);
+            Assert.Equal("TriadicPalette", color.SchemeType);
 
         }
 
@@ -83,7 +83,7 @@ namespace XUnitTestProject1
                 // arrange
                 ColorSchemeM color = new ColorSchemeM();
                 color.ID = 1;
-                color.SchemeType = 0;
+                color.SchemeType = "TriadicPalette";
 
                 // Act
                 ColorSchemeService service = new ColorSchemeService(context);
@@ -109,7 +109,7 @@ namespace XUnitTestProject1
                 // arrange
                 ColorSchemeM color = new ColorSchemeM();
                 color.ID = 2;
-                color.SchemeType = 1;
+                color.SchemeType = "TriadicPalette";
 
                 // Act
                 ColorSchemeService service = new ColorSchemeService(context);
@@ -135,7 +135,7 @@ namespace XUnitTestProject1
                 // arrange
                 ColorSchemeM color = new ColorSchemeM();
                 color.ID = 1;
-                color.SchemeType = 0;
+                color.SchemeType = "TriadicPalette";
 
                 // Act
                 ColorSchemeService service = new ColorSchemeService(context);
@@ -163,7 +163,7 @@ namespace XUnitTestProject1
                 // arrange
                 ColorSchemeM color = new ColorSchemeM();
                 color.ID = 2;
-                color.SchemeType = 2;
+                color.SchemeType = "TriadicPalette";
 
                 // Act
                 ColorSchemeService service = new ColorSchemeService(context);
