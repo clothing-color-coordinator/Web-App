@@ -11,7 +11,7 @@ namespace ColorScheme.Models
     {
         public int ID { get; set; }
 
-        public int UserID { get; set; }
+        public int UserMID { get; set; }
 
         public string SchemeType { get; set; }
 

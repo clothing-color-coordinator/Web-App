@@ -52,7 +52,7 @@ namespace ColorScheme.Models.Services
             var user = await _context.User.FindAsync(id);
             _context.User.Remove(user);
 
-            var children = _context.colorScheme.Where(f => f.UserID == id);
+            var children = _context.colorScheme.Where(f => f.UserMID == id);
 
             foreach (var i in children)
             {

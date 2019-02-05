@@ -5,29 +5,21 @@
     Layout = "_Layout";
 }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        if (Model.colorSchemes != null)
-        {
-        @foreach (var item in Model.colorSchemes)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item)
-                </td>
-                <td>
-                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                </td>
-            </tr>
-        }
-        }
-
-    </tbody>
-</table>
+<div>
+    <h4>Color Scheme</h4>
+    <hr />
+    <dl class="row">
+        @*<dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.colorSchemes)
+        </dt>*@
+        <dt class="col-sm-2">
+            @Html.DisplayFor(model => model.Name)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayFor(model => model.colorSchemes)
+        </dt>
+    </dl>
+</div>
