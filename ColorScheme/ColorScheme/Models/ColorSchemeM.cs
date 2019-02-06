@@ -22,11 +22,11 @@ namespace ColorScheme.Models
     //enum
     public enum SchemeType
     {
-        [Display(Name = "Complementary")]
+        
         ComplimentaryPalette,
-        [Display(Name = "Analogous")]
+        
         AnalogousPalette,
-        [Display(Name = "Triadic")]
+        
         TriadicPalette 
 
     }
