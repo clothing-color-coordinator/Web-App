@@ -30,12 +30,7 @@ namespace ColorScheme.Controllers
             return View();
         }
 
-        /// <summary>
-        /// Displays the details of the Color Scheme
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<IActionResult> Details(int id)
+      
 
         [HttpGet]
         public async Task<IActionResult> Results(string SchemeType, string color)
@@ -44,9 +39,9 @@ namespace ColorScheme.Controllers
             using (var client = new HttpClient())
             {
 
-                client.BaseAddress = new Uri("https://colorwheelapi20190205024526.azurewebsites.net/");
+                client.BaseAddress = new Uri("https://colorwheelapi20190205024526.azurewebsites.net");
 
-                var response = await client.GetAsync($"api/Get{SchemeType}/{color}");
+                var response = await client.GetAsync($"/api/Get{SchemeType}/{color}");
 
                 response.EnsureSuccessStatusCode();
 
