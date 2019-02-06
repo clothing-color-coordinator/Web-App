@@ -1,11 +1,14 @@
 ﻿@model IEnumerable<ColorScheme.Models.UserM>
-  
+
 
 @{
     ViewData["Title"] = "Index";
     Layout = "_Layout";
 }
 
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 
 <table class="table">
     <thead>
@@ -13,8 +16,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-           
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -24,11 +25,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
-             
+
                 <td>
-                    
-                    <a asp-action="Details" asp-route-id="@item.ID">My Saved Colors</a> 
-                   
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">My Saved Colors</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
                 </td>
             </tr>
         }

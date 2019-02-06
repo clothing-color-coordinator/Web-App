@@ -11,6 +11,7 @@ using ColorScheme.Models.Interfaces;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Linq;
+using System.IO;
 
 namespace ColorScheme.Controllers
 {
@@ -44,12 +45,23 @@ namespace ColorScheme.Controllers
 
                 response.EnsureSuccessStatusCode();
 
-                var result = await response.Content.ReadAsStringAsync();
+                string result = await response.Content.ReadAsStringAsync();
 
-                var colors = JsonConvert.DeserializeObject(result);
+                dynamic colors = JsonConvert.DeserializeObject(result);
 
-                return View(colors);
+                ColorSchemeM schemeM = new ColorSchemeM();
+                schemeM.ColorSearched = colors.palette[0].colorName;
+                schemeM.ColorSearchedHex = colors.palette[0].hexCode;
+                schemeM.ColorReceived = colors.palette[1].colorName;
+                schemeM.ColorReceivedHex = colors.palette[1].hexCode;
+                schemeM.ColorReceivedTwo = colors.palette[2].colorName;
+                schemeM.ColorReceivedHexTwo = colors.palette[2].hexCode;
+
+                return View(schemeM);
+
             }
+
+            
         }
 
 
