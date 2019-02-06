@@ -65,11 +65,11 @@ namespace ColorScheme.Controllers
         }
 
 
-        ///// <summary>
-        ///// Saves color scheme reveived from API
-        ///// </summary>
-        ///// <param name="user"></param>
-        ///// <returns></returns>
+        /// <summary>
+        /// Saves color scheme reveived from API
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         //public async Task<IActionResult> Create([Bind("ID,Name")] ColorSchemeM colorScheme)
@@ -81,7 +81,7 @@ namespace ColorScheme.Controllers
         //    }
         //    return View(colorScheme);
         //}
-         
+
         ///// <summary>
         ///// Prompts an are you sure warning when delete option is selected
         ///// </summary>
@@ -113,6 +113,6 @@ namespace ColorScheme.Controllers
         //    return RedirectToAction(nameof(Index));
         //}
 
-      
+
     }
 }
