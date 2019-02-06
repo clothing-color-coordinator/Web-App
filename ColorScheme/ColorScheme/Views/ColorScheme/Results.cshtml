@@ -8,7 +8,7 @@
 
 <body>
     <h1>Results</h1>
-    <table>
+    @*<table>
         <tr>
             <th>Searched Color</th>
             <th>Viual</th>
@@ -34,9 +34,17 @@
 
 
 
-    </table>
-    <p>Model.</p>
-    <form>
-    <input value="@Model.ColorSearched"/>
-</form>
+    </table>*@
+    <p>Model</p>
+    <form asp-action="Create">
+        <input value="@Model.ColorSearched" />
+        <input value="@Model.ColorSearchedHex" />
+        <input value="@Model.ColorReceived" />
+        <input value="@Model.ColorReceivedHex" />
+        <input value="@Model.ColorReceivedTwo" />
+        <input value="@Model.ColorReceivedHexTwo" />
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
 </body>
