@@ -13,6 +13,6 @@ namespace ColorScheme.Models
 
         public string Name { get; set; }
 
-        ICollection<ColorSchemeM> colorSchemes { get; set; }
+        public ICollection<ColorSchemeM> colorSchemes { get; set; }
     }
 }

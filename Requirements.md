@@ -75,9 +75,9 @@ The user can create, edit and delete
 
 The palette tables are connected
 
-Application will have usability
+Application will have usability: easy to read font size and colors, consistent layout colors, error tolerant, quick and easy navigation, compatible for mobile.
 
-Application will be teatable
+Application will be testable: consistent, quantitative, and unambiguous.
 
 # Data Flow
 

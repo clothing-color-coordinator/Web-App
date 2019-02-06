@@ -11,21 +11,23 @@ namespace ColorScheme.Models
     {
         public int ID { get; set; }
 
-        public int UserID { get; set; }
+        public int UserMID { get; set; }
 
-        public int SchemeType { get; set; }
+        public string SchemeType { get; set; }
 
         public string ColorSchemes { get; set; }
-
         
     }
 
     //enum
     public enum SchemeType
     {
-        typeOne = 0,
-        typeTwo = 1,
-        typeThree = 2
+        
+        ComplimentaryPalette,
+        
+        AnalogousPalette,
+        
+        TriadicPalette 
 
     }
 }

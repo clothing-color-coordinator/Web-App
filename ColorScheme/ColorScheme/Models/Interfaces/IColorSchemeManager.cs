@@ -13,9 +13,6 @@ namespace ColorScheme.Models.Interfaces
         //displays all ColorSchemes
         Task<IEnumerable<ColorSchemeM>> GetColorSchemes();
 
-        //Displays details of ColorScheme
-        Task<ColorSchemeM> GetOneColorScheme(int id);
-
 
         //displays delete view
         Task<ColorSchemeM> DeleteOne(int id);
@@ -23,7 +20,6 @@ namespace ColorScheme.Models.Interfaces
         //deletes ColorScheme
         Task DeleteColorScheme(int ID);
 
-        //checks if instance exists
-        bool ColorSchemeExist(int id);
+       
     }
 }

@@ -1,14 +1,41 @@
-﻿@model IEnumerable<ColorScheme.Models.ColorSchemeM>
+﻿@model ColorScheme.Models.ColorSchemeM
 
 @{
     ViewData["Title"] = "Index";
     Layout = "_Layout";
 }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<div class="row">
+    <div class="col-md-4">
+
+        <form method="post">
+            <div class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Type a Color</label>
+                <input name="color" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="SchemeType" class="control-label"></label>
+                <select name="SchemeType" class="form-control">
+                    <option>ComplimentaryPalette</option>
+                    <option>AnalogousPalette</option>
+                    <option>TriadicPalette</option>
+                </select>
+                <span asp-validation-for="SchemeType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -17,7 +44,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.ColorSchemes)
             </th>
-            <th></th>
+
         </tr>
     </thead>
     <tbody>
@@ -30,12 +57,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.ColorSchemes)
                 </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                <td>*@
+@*<a asp-action="Edit" asp-route-id="@item.ID">Save</a> |*@
+
+@*</td>
+                </tr>
+            }
+        </tbody>
+    </table>*@

@@ -96,6 +96,7 @@ namespace ColorScheme.Controllers
         /// <param name="id"></param>
         /// <param name="user"></param>
         /// <returns></returns>
+        [HttpPost]
         public async Task<IActionResult> Edit(int id, [Bind("ID,Name")] UserM user)
         {
             
