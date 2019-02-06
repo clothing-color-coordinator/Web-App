@@ -15,15 +15,25 @@ namespace ColorScheme.Models
 
         public string SchemeType { get; set; }
 
-        public string ColorSchemes { get; set; }
-        
+        public string ColorSearched { get; set; }
+
+        public string ColorSearchedHex { get; set; }
+
+        public string ColorReceived { get; set; }
+
+        public string ColorReceivedHex { get; set; }
+
+        public string ColorReceivedTwo { get; set; }
+
+        public string ColorReceivedHexTwo { get; set; }
+
     }
 
     //enum
     public enum SchemeType
     {
         
-        ComplimentaryPalette,
+        ComplementaryPalette,
         
         AnalogousPalette,
         

@@ -24,7 +24,17 @@ namespace ColorScheme.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ColorSchemes");
+                    b.Property<string>("ColorReceived");
+
+                    b.Property<string>("ColorReceivedHex");
+
+                    b.Property<string>("ColorReceivedHexTwo");
+
+                    b.Property<string>("ColorReceivedTwo");
+
+                    b.Property<string>("ColorSearched");
+
+                    b.Property<string>("ColorSearchedHex");
 
                     b.Property<string>("SchemeType");
 

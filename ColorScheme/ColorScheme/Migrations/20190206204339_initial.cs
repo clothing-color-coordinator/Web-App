@@ -28,7 +28,12 @@ namespace ColorScheme.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     UserMID = table.Column<int>(nullable: false),
                     SchemeType = table.Column<string>(nullable: true),
-                    ColorSchemes = table.Column<string>(nullable: true)
+                    ColorSearched = table.Column<string>(nullable: true),
+                    ColorSearchedHex = table.Column<string>(nullable: true),
+                    ColorReceived = table.Column<string>(nullable: true),
+                    ColorReceivedHex = table.Column<string>(nullable: true),
+                    ColorReceivedTwo = table.Column<string>(nullable: true),
+                    ColorReceivedHexTwo = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
