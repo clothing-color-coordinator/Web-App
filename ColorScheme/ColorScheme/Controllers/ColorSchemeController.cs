@@ -55,15 +55,21 @@ namespace ColorScheme.Controllers
                 string result = await response.Content.ReadAsStringAsync();
 
                 dynamic colors = JsonConvert.DeserializeObject(result);
-
+                
                 ColorSchemeM schemeM = new ColorSchemeM();
                 schemeM.ColorSearched = colors.palette[0].colorName;
                 schemeM.ColorSearchedHex = colors.palette[0].hexCode;
                 schemeM.ColorReceived = colors.palette[1].colorName;
                 schemeM.ColorReceivedHex = colors.palette[1].hexCode;
+                if (colors.palette.Count > 2) { 
                 schemeM.ColorReceivedTwo = colors.palette[2].colorName;
                 schemeM.ColorReceivedHexTwo = colors.palette[2].hexCode;
-
+                }
+                else
+                {
+                    schemeM.ColorReceivedTwo = "NA";
+                    schemeM.ColorReceivedHexTwo = "NA";
+                }
                 return View(schemeM);
 
             }
