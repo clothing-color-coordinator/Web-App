@@ -30,7 +30,6 @@ namespace ColorScheme.Controllers
             return View();
         }
 
-      
 
         [HttpGet]
         public async Task<IActionResult> Results(string SchemeType, string color)
