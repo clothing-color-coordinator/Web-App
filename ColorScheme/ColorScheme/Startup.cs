@@ -30,7 +30,7 @@ namespace ColorScheme
             services.AddMvc();
 
             services.AddDbContext<ColorSchemeDbContext>(options =>
-           options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+           options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection"])
            );
 
             services.AddScoped<IUserManager, UserService>();
