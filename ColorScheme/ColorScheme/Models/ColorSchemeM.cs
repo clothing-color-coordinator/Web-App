@@ -35,9 +35,7 @@ namespace ColorScheme.Models
         
         ComplementaryPalette,
         
-        AnalogousPalette,
-        
-        TriadicPalette 
+        SplitComplementaryPalette
 
     }
 }
