@@ -17,6 +17,13 @@ namespace ColorScheme.Controllers
 {
     public class ColorSchemeController : Controller
     {
+        private readonly ColorSchemeDbContext _context;
+
+        public ColorSchemeController(ColorSchemeDbContext context)
+        {
+            _context = context;
+        }
+
         [HttpPost]
         public IActionResult Index(string SchemeType, string color)
         {
@@ -61,26 +68,28 @@ namespace ColorScheme.Controllers
 
             }
 
-            
+
         }
 
 
-        /// <summary>
-        /// Saves color scheme reveived from API
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("ID,Name")] ColorSchemeM colorScheme)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        await _context.SaveColorScheme(colorScheme);
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(colorScheme);
-        //}
+        // <summary>
+        // Saves color scheme reveived from API
+        // </summary>
+        // <param name = "user" ></ param >
+        // < returns ></ returns >
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("ID,Name")] ColorSchemeM colorScheme)
+        {
+            if (ModelState.IsValid)
+            {
+                ViewData["ID"] = new SelectList(_context.User, "ID", "Name");
+                _context.Add(colorScheme);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(colorScheme);
+        }
 
         ///// <summary>
         ///// Prompts an are you sure warning when delete option is selected
