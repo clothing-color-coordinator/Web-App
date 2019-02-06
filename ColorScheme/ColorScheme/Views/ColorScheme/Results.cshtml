@@ -1,7 +1,42 @@
-﻿
-    
+﻿@model ColorScheme.Models.ColorSchemeM
+
 
 @{
     ViewData["Title"] = "Results";
     Layout = "_Layout";
 }
+
+<body>
+    <h1>Results</h1>
+    <table>
+        <tr>
+            <th>Searched Color</th>
+            <th>Viual</th>
+            <th>Results Color</th>
+            <th>Visual</th>
+            <th>Results Color</th>
+            <th>Visual</th>
+            <
+        </tr>
+       
+            <tr>
+                <td>@Model.ColorSearched</td>
+                <td>@Model.ColorSearchedHex</td>
+                <td>@Model.ColorReceived</td>
+                <td>@Model.ColorReceivedHex</td>
+                <td>@Model.ColorReceivedTwo</td>
+                <td>@Model.ColorReceivedHexTwo</td>
+
+            </tr>
+
+        
+
+
+
+
+    </table>
+    <p>Model.</p>
+    <form>
+    <input value="@Model.ColorSearched"/>
+</form>
+</body>
