@@ -1,12 +1,15 @@
-﻿body {
+body {
     background-color: azure;
     text-align: center;
 }
 
-select#UserMID {
-    font-size: 18px;
+
+h1{
+    color: red;
 }
 
-h1 {
-    font-size: 50px;
-}
+
+
+
+
+
