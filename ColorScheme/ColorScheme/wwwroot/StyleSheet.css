@@ -2,8 +2,10 @@
     background-color: azure;
     text-align: center;
 }
-.colors {
-    
+
+#col-md-4{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
