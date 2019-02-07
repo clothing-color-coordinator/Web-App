@@ -1,23 +1,34 @@
-﻿@model ICollection<ColorScheme.Models.ColorSchemeM>
+
+﻿@model IEnumerable<ColorScheme.Models.ColorSchemeM>
 
 @{
     ViewData["Title"] = "Details";
     Layout = "_Layout";
 }
 
-<div>
-    <h4>Color Scheme</h4>
-    <hr />
-    <dl class="row">
 
-        @*<dt class="col-sm-2">
-            @Html.DisplayFor(model => model.Name)
-        </dt>*@
-        @foreach (var item in Model)
-        {
-            <dt class="col-sm-2">
-                @Html.DisplayFor(model => item.ColorSearched)
-            </dt>
-        }
-        </dl>
-</div>
+<    <table>
+    <tr>
+        <th>Searched Color</th>
+        <th>Visual</th>
+        <th>Results Color</th>
+        <th>Visual</th>
+        <th>Results Color</th>
+        <th>Visual</th>
+        <
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ColorSearched</td>
+            <td class="colors" style="background-color: @item.ColorSearchedHex">@item.ColorSearchedHex</td>
+            <td>@item.ColorReceived</td>
+            <td class="colors" style="background-color: @item.ColorReceivedHex">@item.ColorReceivedHex</td>
+            <td>@item.ColorReceivedTwo</td>
+            <td style="background-color: @item.ColorReceivedHexTwo">@item.ColorReceivedHexTwo</td>
+        <td><a asp-action="DeleteColorScheme" asp-route-id="@item.ID">Delete</a></td>
+        </tr>
+    }
+
+</table>
+

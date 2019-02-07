@@ -164,7 +164,11 @@ namespace ColorScheme.Controllers
             return _context.UserExist(id);
         }
 
-
+        public async Task<IActionResult> DeleteColorScheme(int id)
+        {
+           await _context.DeleteScheme(id);
+            return RedirectToAction(nameof(Index));
+        }
 
 
 

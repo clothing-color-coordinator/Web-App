@@ -12,7 +12,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Linq;
 using System.IO;
-
+using System.Drawing;
 namespace ColorScheme.Controllers
 {
     public class ColorSchemeController : Controller
@@ -34,7 +34,7 @@ namespace ColorScheme.Controllers
 
         public async Task <IActionResult> Index()
         {
-            //return View(await _context.GetColorSchemes());
+            
             return View();
         }
 
@@ -98,36 +98,39 @@ namespace ColorScheme.Controllers
             return View(colorScheme);
         }
 
-        ///// <summary>
-        ///// Prompts an are you sure warning when delete option is selected
-        ///// </summary>
-        ///// <param name="id"></param>
-        ///// <returns></returns>
-        //public async Task<IActionResult> Delete(int id)
-        //{
+        /// <summary>
+        /// Prompts an are you sure warning when delete option is selected
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<IActionResult> Delete(int id)
+        {
 
-        //    var colorScheme = await _context.DeleteOne(id);
+            var colorScheme = await _context.colorScheme.FindAsync(id);
 
-        //    if (colorScheme == null)
-        //    {
-        //        return NotFound();
-        //    }
+            if (colorScheme == null)
+            {
+                return NotFound();
+            }
 
-        //    return View(colorScheme);
-        //}
+            return View(colorScheme);
+        }
 
-        ///// <summary>
-        ///// Deletes selected color Scheme
-        ///// </summary>
-        ///// <param name="id"></param>
-        ///// <returns></returns>
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteConfirmed(int id)
-        //{
-        //    await _context.DeleteColorScheme(id);
-        //    return RedirectToAction(nameof(Index));
-        //}
+        /// <summary>
+        /// Deletes selected color Scheme
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var scheme = await _context.colorScheme.FindAsync(id);
+            _context.colorScheme.Remove(scheme);
+            await _context.SaveChangesAsync();
+            var path = "../User/Details";
+            return RedirectToAction(path);
+        }
 
 
     }
