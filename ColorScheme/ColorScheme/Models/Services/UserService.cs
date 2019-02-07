@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ColorScheme.Models.Services
 {
-    public class UserService : IUserManager
+    public class UserService : IUserManager 
     {
         /// <summary>
         /// Bring in the DB
@@ -110,6 +110,13 @@ namespace ColorScheme.Models.Services
         public bool UserExist(int id)
         {
            return _context.User.Any(i => i.ID == id);
+        }
+
+        public async Task DeleteScheme(int id)
+        {
+            ColorSchemeController schemeController = new ColorSchemeController(_context);
+
+            await schemeController.DeleteConfirmed(id);
         }
     }
 }

@@ -8,7 +8,7 @@
 <    <table>
     <tr>
         <th>Searched Color</th>
-        <th>Viual</th>
+        <th>Visual</th>
         <th>Results Color</th>
         <th>Visual</th>
         <th>Results Color</th>
@@ -17,15 +17,15 @@
     </tr>
     @foreach (var item in Model)
     {
-    <tr>
-        <td>@item.ColorSearched</td>
-        <td>@item.ColorSearchedHex</td>
-        <td>@item.ColorReceived</td>
-        <td>@item.ColorReceivedHex</td>
-        <td>@item.ColorReceivedTwo</td>
-        <td>@item.ColorReceivedHexTwo</td>
-
-    </tr>
+        <tr>
+            <td>@item.ColorSearched</td>
+            <td class="colors" style="background-color: @item.ColorSearchedHex">@item.ColorSearchedHex</td>
+            <td>@item.ColorReceived</td>
+            <td class="colors" style="background-color: @item.ColorReceivedHex">@item.ColorReceivedHex</td>
+            <td>@item.ColorReceivedTwo</td>
+            <td style="background-color: @item.ColorReceivedHexTwo">@item.ColorReceivedHexTwo</td>
+        <td><a asp-action="DeleteColorScheme" asp-route-id="@item.ID">Delete</a></td>
+        </tr>
     }
 
 </table>
