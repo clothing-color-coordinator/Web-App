@@ -24,6 +24,12 @@ namespace ColorScheme.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// gets user request and redirects it to the results method
+        /// </summary>
+        /// <param name="SchemeType"></param>
+        /// <param name="color"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Index(string SchemeType, string color)
         {
@@ -38,7 +44,12 @@ namespace ColorScheme.Controllers
             return View();
         }
 
-
+        /// <summary>
+        /// Makes a call to the API, then builds a object and sends it to the view
+        /// </summary>
+        /// <param name="SchemeType"></param>
+        /// <param name="color"></param>
+        /// <returns>Object</returns>
         [HttpGet]
         public async Task<IActionResult> Results(string SchemeType, string color)
 
@@ -49,18 +60,19 @@ namespace ColorScheme.Controllers
                 {
                     using (var client = new HttpClient())
                     {
-
+                        //call made to the api
                         client.BaseAddress = new Uri("https://colorwheelapi20190205024526.azurewebsites.net");
 
                         var response = await client.GetAsync($"/api/Get{SchemeType}/{color}");
 
                         response.EnsureSuccessStatusCode();
-
+                        //Reades JSON file received from API
                         string result = await response.Content.ReadAsStringAsync();
 
                         dynamic colors = JsonConvert.DeserializeObject(result);
-
+                        //Build object
                         ColorSchemeM schemeM = new ColorSchemeM();
+                        schemeM.SchemeType = SchemeType;
                         schemeM.ColorSearched = colors.palette[0].colorName;
                         schemeM.ColorSearchedHex = colors.palette[0].hexCode;
                         schemeM.ColorReceived = colors.palette[1].colorName;
