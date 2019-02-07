@@ -1,4 +1,4 @@
-﻿@model ColorScheme.Models.UserM
+﻿@model ICollection<ColorScheme.Models.ColorSchemeM>
 
 @{
     ViewData["Title"] = "Details";
@@ -9,11 +9,15 @@
     <h4>Color Scheme</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
+
+        @*<dt class="col-sm-2">
             @Html.DisplayFor(model => model.Name)
-        </dt>
-        <dt class="col-sm-2">
-            @Html.DisplayFor(model => model.colorSchemes)
-        </dt>
-    </dl>
+        </dt>*@
+        @foreach (var item in Model)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayFor(model => item.ColorSearched)
+            </dt>
+        }
+        </dl>
 </div>
