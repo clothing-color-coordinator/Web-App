@@ -2,9 +2,11 @@
     background-color: azure;
     text-align: center;
 }
-.colors {
-    
+
+select#UserMID {
+    font-size: 18px;
 }
 
-
-
+h1 {
+    font-size: 50px;
+}
