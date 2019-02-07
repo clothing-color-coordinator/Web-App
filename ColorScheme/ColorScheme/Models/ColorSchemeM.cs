@@ -36,7 +36,13 @@ namespace ColorScheme.Models
         ComplementaryPalette,
 
         [Display(Name = "Split Complementary Palette")]
-        SplitComplementaryPalette
+        SplitComplementaryPalette,
+
+        [Display(Name = "Triadic Palette")]
+        TriadicPalette,
+
+        [Display(Name = "Analogous Palette")]
+        AnalogousPalette
 
     }
 }

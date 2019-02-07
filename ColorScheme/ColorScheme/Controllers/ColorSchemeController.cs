@@ -43,38 +43,50 @@ namespace ColorScheme.Controllers
         public async Task<IActionResult> Results(string SchemeType, string color)
 
         {
-            using (var client = new HttpClient())
+            if (color != null)
             {
-
-                client.BaseAddress = new Uri("https://colorwheelapi20190205024526.azurewebsites.net");
-
-                var response = await client.GetAsync($"/api/Get{SchemeType}/{color}");
-
-                response.EnsureSuccessStatusCode();
-
-                string result = await response.Content.ReadAsStringAsync();
-
-                dynamic colors = JsonConvert.DeserializeObject(result);
-                
-                ColorSchemeM schemeM = new ColorSchemeM();
-                schemeM.ColorSearched = colors.palette[0].colorName;
-                schemeM.ColorSearchedHex = colors.palette[0].hexCode;
-                schemeM.ColorReceived = colors.palette[1].colorName;
-                schemeM.ColorReceivedHex = colors.palette[1].hexCode;
-                if (colors.palette.Count > 2) { 
-                schemeM.ColorReceivedTwo = colors.palette[2].colorName;
-                schemeM.ColorReceivedHexTwo = colors.palette[2].hexCode;
-                }
-                else
+                try
                 {
-                    schemeM.ColorReceivedTwo = "NA";
-                    schemeM.ColorReceivedHexTwo = "NA";
-                }
-                ViewData["ID"] = new SelectList(_context.User, "ID", "Name");
-                return View(schemeM);
+                    using (var client = new HttpClient())
+                    {
 
+                        client.BaseAddress = new Uri("https://colorwheelapi20190205024526.azurewebsites.net");
+
+                        var response = await client.GetAsync($"/api/Get{SchemeType}/{color}");
+
+                        response.EnsureSuccessStatusCode();
+
+                        string result = await response.Content.ReadAsStringAsync();
+
+                        dynamic colors = JsonConvert.DeserializeObject(result);
+
+                        ColorSchemeM schemeM = new ColorSchemeM();
+                        schemeM.ColorSearched = colors.palette[0].colorName;
+                        schemeM.ColorSearchedHex = colors.palette[0].hexCode;
+                        schemeM.ColorReceived = colors.palette[1].colorName;
+                        schemeM.ColorReceivedHex = colors.palette[1].hexCode;
+                        if (colors.palette.Count > 2)
+                        {
+                            schemeM.ColorReceivedTwo = colors.palette[2].colorName;
+                            schemeM.ColorReceivedHexTwo = colors.palette[2].hexCode;
+                        }
+                        else
+                        {
+                            schemeM.ColorReceivedTwo = "NA";
+                            schemeM.ColorReceivedHexTwo = "NA";
+                        }
+                        ViewData["ID"] = new SelectList(_context.User, "ID", "Name");
+                        return View(schemeM);
+
+                    }
+                }
+                catch
+                {
+                    return RedirectToAction(nameof(Index));
+                }
             }
 
+            return RedirectToAction(nameof(Index));
 
         }
 
