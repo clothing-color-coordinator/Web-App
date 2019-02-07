@@ -9,29 +9,7 @@
 
 <body>
     <h1>Results</h1>
-    @*<table>
-        <tr>
-            <th>Searched Color</th>
-            <th>Viual</th>
-            <th>Results Color</th>
-            <th>Visual</th>
-            <th>Results Color</th>
-            <th>Visual</th>
-            <
-        </tr>
-       
-            <tr>
-                <td>@Model.ColorSearched</td>
-                <td>@Model.ColorSearchedHex</td>
-                <td>@Model.ColorReceived</td>
-                <td>@Model.ColorReceivedHex</td>
-                <td>@Model.ColorReceivedTwo</td>
-                <td>@Model.ColorReceivedHexTwo</td>
 
-            </tr>
-
-
-    </table>*@
     <p>Model</p>
     <form asp-action="Create" method="post" name="colorScheme">
         <div class="form-group">
@@ -45,11 +23,11 @@
             <span asp-validation-for="SchemeType" class="text-danger"></span>
         </div>
         <input name="ColorSearched" value="@Model.ColorSearched" />
-        <input name="ColorSearchedHex" value="@Model.ColorSearchedHex" />
+        <input name="ColorSearchedHex" value="@Model.ColorSearchedHex" style="background-color: @Model.ColorSearchedHex" />
         <input name="ColorReceived" value="@Model.ColorReceived" />
-        <input name="ColorReceivedHex" value="@Model.ColorReceivedHex" />
+        <input name="ColorReceivedHex" value="@Model.ColorReceivedHex" style="background-color: @Model.ColorReceivedHex"/>
         <input name="ColorReceivedTwo" value="@Model.ColorReceivedTwo" />
-        <input name="ColorReceivedHexTwo" value="@Model.ColorReceivedHexTwo" />
+        <input name="ColorReceivedHexTwo" value="@Model.ColorReceivedHexTwo" style="background-color: @Model.ColorReceivedHexTwo"/>
         <div class="form-group">
             <input type="submit" value="Save" class="btn btn-primary" />
         </div>
