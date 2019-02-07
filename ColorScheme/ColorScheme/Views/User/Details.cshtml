@@ -1,14 +1,16 @@
-﻿@model IEnumerable<ColorScheme.Models.ColorSchemeM>
+@model IEnumerable<ColorScheme.Models.ColorSchemeM>
 
 @{
     ViewData["Title"] = "Details";
     Layout = "_Layout";
 }
 
+
 <div class="col-md-2 col-xs-12"></div>
 <div class="col-md-8 col-xs-12">
     <table class="table table-light table-striped table-bordered">
         <tr>
+            <th>Palette Type</th>
             <th>Searched Color</th>
             <th>Hex Code</th>
             <th>Color Match #1</th>
@@ -16,11 +18,11 @@
             <th>Color Match #2</th>
             <th>Hex Code</th>
             <th>Delete?</th>
-
         </tr>
         @foreach (var item in Model)
         {
             <tr>
+                <td>@item.SchemeType</td>
                 <td>@item.ColorSearched</td>
                 <td class="colors" style="background-color: @item.ColorSearchedHex">@item.ColorSearchedHex</td>
                 <td>@item.ColorReceived</td>

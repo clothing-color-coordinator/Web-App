@@ -18,9 +18,15 @@
             <span asp-validation-for="UserMID" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label>Color Palette</label>
-            <select asp-for="SchemeType" class="form-control" asp-items="@Html.GetEnumSelectList<ColorScheme.Models.SchemeType>()"></select>
-            <span asp-validation-for="SchemeType" class="text-danger"></span>
+
+            <label asp-for="SchemeType" class="control-label"></label>
+            <select name="SchemeType" class="form-control">
+                <option>ComplementaryPalette</option>
+                <option>SplitComplementaryPalette</option>
+                <option>TriadicPalette</option>
+                <option>AnalogousPalette</option>
+            </select>
+
         </div>
         <input name="ColorSearched" value="@Model.ColorSearched" />
         <input name="ColorSearchedHex" value="@Model.ColorSearchedHex" style="background-color: @Model.ColorSearchedHex" />
