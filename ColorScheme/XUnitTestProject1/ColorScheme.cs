@@ -17,11 +17,11 @@ namespace XUnitTestProject1
         {
             //Arrange
             ColorSchemeM color = new ColorSchemeM();
-            color.ID = 1;
+            color.UserMID = 1;
 
 
             //Assert
-            Assert.Equal(1, color.ID);
+            Assert.Equal(1, color.UserMID);
 
         }
 
@@ -30,7 +30,7 @@ namespace XUnitTestProject1
         {
             //Arrange
             ColorSchemeM color = new ColorSchemeM();
-            color.ID = 1;
+            color.UserMID = 1;
             color.SchemeType = "TriadicPalette";
 
 
@@ -44,14 +44,14 @@ namespace XUnitTestProject1
         {
             //Arrange
             ColorSchemeM color = new ColorSchemeM();
-            color.ID = 1;
+            color.UserMID = 1;
             color.SchemeType = "TriadicPalette";
 
             //Act
-            color.ID = 2;
+            color.UserMID = 2;
 
             //Assert
-            Assert.Equal(2, color.ID);
+            Assert.Equal(2, color.UserMID);
 
         }
 
@@ -60,7 +60,7 @@ namespace XUnitTestProject1
         {
             //Arrange
             ColorSchemeM color = new ColorSchemeM();
-            color.ID = 1;
+            color.UserMID = 1;
             color.SchemeType = "ComplementaryPalette";
 
             //Act
@@ -82,14 +82,14 @@ namespace XUnitTestProject1
             {
                 // arrange
                 ColorSchemeM color = new ColorSchemeM();
-                color.ID = 1;
+                color.UserMID = 1;
                 color.SchemeType = "TriadicPalette";
 
                 // Act
                 ColorSchemeService service = new ColorSchemeService(context);
 
                 await service.SaveColorScheme(color);
-                var created = context.colorScheme.FirstOrDefault(u => u.ID == color.ID);
+                var created = context.colorScheme.FirstOrDefault(u => u.UserMID == color.UserMID);
 
                 // Assert
                 Assert.Equal(color, created);
@@ -108,14 +108,14 @@ namespace XUnitTestProject1
             {
                 // arrange
                 ColorSchemeM color = new ColorSchemeM();
-                color.ID = 2;
+                color.UserMID = 2;
                 color.SchemeType = "TriadicPalette";
 
                 // Act
                 ColorSchemeService service = new ColorSchemeService(context);
 
                 await service.SaveColorScheme(color);
-                var created = context.colorScheme.FirstOrDefault(u => u.ID == color.ID);
+                var created = context.colorScheme.FirstOrDefault(u => u.UserMID == color.UserMID);
 
                 // Assert
                 Assert.Equal(color, created);
@@ -134,7 +134,7 @@ namespace XUnitTestProject1
             {
                 // arrange
                 ColorSchemeM color = new ColorSchemeM();
-                color.ID = 1;
+                color.UserMID = 1;
                 color.SchemeType = "TriadicPalette";
 
                 // Act
@@ -143,7 +143,7 @@ namespace XUnitTestProject1
                 await service.SaveColorScheme(color);
                 await service.DeleteColorScheme(1);
 
-                var deleted = context.colorScheme.FirstOrDefault(u => u.ID == color.ID);
+                var deleted = context.colorScheme.FirstOrDefault(u => u.UserMID == color.UserMID);
 
                 // Assert
                 Assert.Null(deleted);
@@ -162,7 +162,7 @@ namespace XUnitTestProject1
             {
                 // arrange
                 ColorSchemeM color = new ColorSchemeM();
-                color.ID = 2;
+                color.UserMID = 2;
                 color.SchemeType = "TriadicPalette";
 
                 // Act
@@ -171,7 +171,7 @@ namespace XUnitTestProject1
                 await service.SaveColorScheme(color);
                 await service.DeleteColorScheme(2);
 
-                var deleted = context.colorScheme.FirstOrDefault(u => u.ID == color.ID);
+                var deleted = context.colorScheme.FirstOrDefault(u => u.UserMID == color.UserMID);
 
                 // Assert
                 Assert.Null(deleted);

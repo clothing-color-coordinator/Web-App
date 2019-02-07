@@ -67,9 +67,9 @@ namespace ColorScheme.Models.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<UserM> GetOneuser(int id)
+        public async Task<IEnumerable<ColorSchemeM>> GetOneuser(int id)
         {
-            return await _context.User.FirstOrDefaultAsync(u => u.ID == id);
+            return _context.colorScheme.Where(u=>u.UserMID == id).ToList();
         }
 
         /// <summary>

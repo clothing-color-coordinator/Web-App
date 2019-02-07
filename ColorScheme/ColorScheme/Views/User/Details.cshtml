@@ -1,19 +1,31 @@
-﻿@model ColorScheme.Models.UserM
+﻿@model IEnumerable<ColorScheme.Models.ColorSchemeM>
 
 @{
     ViewData["Title"] = "Details";
     Layout = "_Layout";
 }
 
-<div>
-    <h4>Color Scheme</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayFor(model => model.Name)
-        </dt>
-        <dt class="col-sm-2">
-            @Html.DisplayFor(model => model.colorSchemes)
-        </dt>
-    </dl>
-</div>
+<    <table>
+    <tr>
+        <th>Searched Color</th>
+        <th>Viual</th>
+        <th>Results Color</th>
+        <th>Visual</th>
+        <th>Results Color</th>
+        <th>Visual</th>
+        <
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.ColorSearched</td>
+        <td>@item.ColorSearchedHex</td>
+        <td>@item.ColorReceived</td>
+        <td>@item.ColorReceivedHex</td>
+        <td>@item.ColorReceivedTwo</td>
+        <td>@item.ColorReceivedHexTwo</td>
+
+    </tr>
+    }
+
+</table>

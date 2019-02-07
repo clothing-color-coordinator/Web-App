@@ -14,7 +14,7 @@ namespace ColorScheme.Models.Interfaces
         Task<IEnumerable<UserM>> GetUsers();
 
         //Displays details of User
-        Task<UserM> GetOneuser(int id);
+        Task<IEnumerable<ColorSchemeM>> GetOneuser(int id);
 
         //displays update view
         Task<UserM> UpdateOne(int id);
