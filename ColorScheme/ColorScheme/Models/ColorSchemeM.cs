@@ -32,9 +32,10 @@ namespace ColorScheme.Models
     //enum
     public enum SchemeType
     {
-        
+        [Display(Name = "Complementary Palette")]
         ComplementaryPalette,
-        
+
+        [Display(Name = "Split Complementary Palette")]
         SplitComplementaryPalette
 
     }

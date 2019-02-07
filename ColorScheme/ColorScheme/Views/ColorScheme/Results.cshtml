@@ -33,23 +33,23 @@
 
     </table>*@
     <p>Model</p>
-    <form asp-action="Create">
-        @*<div class="form-group">
-            <label asp-for="ID" class="control-label"></label>
-            <select asp-for="ID" class="form-control" asp-items="@Html.SelectList<ColorScheme.Models.UserM>()"></select>
-            <span asp-validation-for="ID" class="text-danger"></span>
-        </div>*@
+    <form asp-action="Create" method="post" name="colorScheme">
+        <div class="form-group">
+            <label asp-for="UserMID" class="control-label"></label>
+            <select asp-for="UserMID" class="form-control" asp-items="ViewBag.ID"></select>
+            <span asp-validation-for="UserMID" class="text-danger"></span>
+        </div>
         <div class="form-group">
             <label asp-for="SchemeType" class="control-label"></label>
             <select asp-for="SchemeType" class="form-control" asp-items="@Html.GetEnumSelectList<ColorScheme.Models.SchemeType>()"></select>
             <span asp-validation-for="SchemeType" class="text-danger"></span>
         </div>
-        <input value="@Model.ColorSearched" />
-        <input value="@Model.ColorSearchedHex" />
-        <input value="@Model.ColorReceived" />
-        <input value="@Model.ColorReceivedHex" />
-        <input value="@Model.ColorReceivedTwo" />
-        <input value="@Model.ColorReceivedHexTwo" />
+        <input name="ColorSearched" value="@Model.ColorSearched" />
+        <input name="ColorSearchedHex" value="@Model.ColorSearchedHex" />
+        <input name="ColorReceived" value="@Model.ColorReceived" />
+        <input name="ColorReceivedHex" value="@Model.ColorReceivedHex" />
+        <input name="ColorReceivedTwo" value="@Model.ColorReceivedTwo" />
+        <input name="ColorReceivedHexTwo" value="@Model.ColorReceivedHexTwo" />
         <div class="form-group">
             <input type="submit" value="Save" class="btn btn-primary" />
         </div>

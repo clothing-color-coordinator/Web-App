@@ -55,15 +55,22 @@ namespace ColorScheme.Controllers
                 string result = await response.Content.ReadAsStringAsync();
 
                 dynamic colors = JsonConvert.DeserializeObject(result);
-
+                
                 ColorSchemeM schemeM = new ColorSchemeM();
                 schemeM.ColorSearched = colors.palette[0].colorName;
                 schemeM.ColorSearchedHex = colors.palette[0].hexCode;
                 schemeM.ColorReceived = colors.palette[1].colorName;
                 schemeM.ColorReceivedHex = colors.palette[1].hexCode;
+                if (colors.palette.Count > 2) { 
                 schemeM.ColorReceivedTwo = colors.palette[2].colorName;
                 schemeM.ColorReceivedHexTwo = colors.palette[2].hexCode;
-
+                }
+                else
+                {
+                    schemeM.ColorReceivedTwo = "NA";
+                    schemeM.ColorReceivedHexTwo = "NA";
+                }
+                ViewData["ID"] = new SelectList(_context.User, "ID", "Name");
                 return View(schemeM);
 
             }
@@ -79,11 +86,11 @@ namespace ColorScheme.Controllers
         // < returns ></ returns >
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name")] ColorSchemeM colorScheme)
+        public async Task<IActionResult> Create([Bind("ID,UserMID,SchemeType,ColorSearched,ColorSearchedHex,ColorReceived,ColorReceivedHex,ColorReceivedTwo,ColorReceivedHexTwo")] ColorSchemeM colorScheme)
         {
             if (ModelState.IsValid)
             {
-                ViewData["ID"] = new SelectList(_context.User, "ID", "Name");
+                
                 _context.Add(colorScheme);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
