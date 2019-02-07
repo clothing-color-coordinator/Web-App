@@ -8,6 +8,7 @@
 
 <    <table>
     <tr>
+        <th>Palette Type</th>
         <th>Searched Color</th>
         <th>Visual</th>
         <th>Results Color</th>
@@ -19,6 +20,7 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>@item.SchemeType</td>
             <td>@item.ColorSearched</td>
             <td class="colors" style="background-color: @item.ColorSearchedHex">@item.ColorSearchedHex</td>
             <td>@item.ColorReceived</td>
