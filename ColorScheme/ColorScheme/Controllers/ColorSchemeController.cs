@@ -70,6 +70,7 @@ namespace ColorScheme.Controllers
                     schemeM.ColorReceivedTwo = "NA";
                     schemeM.ColorReceivedHexTwo = "NA";
                 }
+                ViewData["ID"] = new SelectList(_context.User, "ID", "Name");
                 return View(schemeM);
 
             }
@@ -85,11 +86,11 @@ namespace ColorScheme.Controllers
         // < returns ></ returns >
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name")] ColorSchemeM colorScheme)
+        public async Task<IActionResult> Create([Bind("ID,UserMID,SchemeType,ColorSearched,ColorSearchedHex,ColorReceived,ColorReceivedHex,ColorReceivedTwo,ColorReceivedHexTwo")] ColorSchemeM colorScheme)
         {
             if (ModelState.IsValid)
             {
-                ViewData["ID"] = new SelectList(_context.User, "ID", "Name");
+                
                 _context.Add(colorScheme);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
