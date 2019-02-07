@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ColorScheme.Models.ColorSchemeM>
+@model IEnumerable<ColorScheme.Models.ColorSchemeM>
 
 @{
     ViewData["Title"] = "Details";
@@ -6,30 +6,34 @@
 }
 
 
-<    <table>
-    <tr>
-        <th>Palette Type</th>
-        <th>Searched Color</th>
-        <th>Visual</th>
-        <th>Results Color</th>
-        <th>Visual</th>
-        <th>Results Color</th>
-        <th>Visual</th>
-        <
-    </tr>
-    @foreach (var item in Model)
-    {
+<div class="col-md-2 col-xs-12"></div>
+<div class="col-md-8 col-xs-12">
+    <table class="table table-light table-striped table-bordered">
         <tr>
-            <td>@item.SchemeType</td>
-            <td>@item.ColorSearched</td>
-            <td class="colors" style="background-color: @item.ColorSearchedHex">@item.ColorSearchedHex</td>
-            <td>@item.ColorReceived</td>
-            <td class="colors" style="background-color: @item.ColorReceivedHex">@item.ColorReceivedHex</td>
-            <td>@item.ColorReceivedTwo</td>
-            <td style="background-color: @item.ColorReceivedHexTwo">@item.ColorReceivedHexTwo</td>
-        <td><a asp-action="DeleteColorScheme" asp-route-id="@item.ID">Delete</a></td>
+            <th>Palette Type</th>
+            <th>Searched Color</th>
+            <th>Hex Code</th>
+            <th>Color Match #1</th>
+            <th>Hex Code</th>
+            <th>Color Match #2</th>
+            <th>Hex Code</th>
+            <th>Delete?</th>
         </tr>
-    }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SchemeType</td>
+                <td>@item.ColorSearched</td>
+                <td class="colors" style="background-color: @item.ColorSearchedHex">@item.ColorSearchedHex</td>
+                <td>@item.ColorReceived</td>
+                <td class="colors" style="background-color: @item.ColorReceivedHex">@item.ColorReceivedHex</td>
+                <td>@item.ColorReceivedTwo</td>
+                <td style="background-color: @item.ColorReceivedHexTwo">@item.ColorReceivedHexTwo</td>
+                <td><a asp-action="DeleteColorScheme" asp-route-id="@item.ID">Delete</a></td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>
+<div class="col-md-2 col-xs-12"></div>
 

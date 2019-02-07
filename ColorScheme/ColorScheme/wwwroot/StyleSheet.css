@@ -1,7 +1,12 @@
-﻿body {
+body {
     background-color: azure;
     text-align: center;
 }
+
+h1{
+    color: red;
+}
+
 
 
 

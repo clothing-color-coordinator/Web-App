@@ -5,36 +5,32 @@
     ViewData["Title"] = "Index";
     Layout = "_Layout";
 }
+<body>
+    <p>
+        <a asp-action="Create">Create New User</a>
+    </p>
+</body>
 
-<p>
+<br />
+<div class="col-md-3 col-xs-12"></div>
+<div class="col-md-6 col-xs-12">
+    <table class="table table-light table-striped table-bordered">
+        <tbody >
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
 
-    <a asp-action="Create">Create New User</a>
-</p>
-   
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-
-                <td>
-
-                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ID">My Saved Colors</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID">My Saved Colors</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="col-md-3 col-xs-12"></div>
