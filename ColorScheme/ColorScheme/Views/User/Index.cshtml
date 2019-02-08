@@ -6,18 +6,14 @@
     Layout = "_Layout3";
 
 }
-<body>
-    <p>
-        <a asp-action="Create">Create New User</a>
-    </p>
-</body>
+
 
 <br />
 <div class="col-md-3 col-xs-12"></div>
 <div class="col-md-6 col-xs-12">
     <table class="table table-dark table-striped table-bordered">
-        
-        <tbody >
+
+        <tbody>
             @foreach (var item in Model)
             {
                 <tr>
@@ -34,5 +30,10 @@
             }
         </tbody>
     </table>
+  
+        <p>
+            <a asp-action="Create">Create New User</a>
+        </p>
+   
 </div>
 <div class="col-md-3 col-xs-12"></div>
