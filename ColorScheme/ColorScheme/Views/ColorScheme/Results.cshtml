@@ -15,30 +15,32 @@
     <br />
    <div class="col-md-4 col-xs-12"></div>
 
-    <form asp-action="Create" method="post" name="colorScheme" class="col-md-4 col-xs-12">
-        <div class="form-group">
-            <label>Username</label>
-            <select asp-for="UserMID" class="form-control" asp-items="ViewBag.ID"></select>
-            <span asp-validation-for="UserMID" class="text-danger"></span>
+   <form asp-action="Create" method="post" name="colorScheme" class="col-md-4 col-xs-12">
+       <div class="form-group">
+           <label>Username</label>
+           <select asp-for="UserMID" class="form-control" asp-items="ViewBag.ID"></select>
+           <span asp-validation-for="UserMID" class="text-danger"></span>
 
-        </div>
-        <div class="form-group">
+       </div>
+       <div class="form-group">
 
-            <input name="SchemeType" value="@Model.SchemeType" />
+           <input name="SchemeType" value="@Model.SchemeType" />
 
-        </div>
-        <input name="ColorSearched" value="@Model.ColorSearched" />
-        <input name="ColorSearchedHex" value="@Model.ColorSearchedHex" style="background-color: @Model.ColorSearchedHex" />
-        <input name="ColorReceived" value="@Model.ColorReceived" />
-        <input name="ColorReceivedHex" value="@Model.ColorReceivedHex" style="background-color: @Model.ColorReceivedHex" />
-        <input name="ColorReceivedTwo" value="@Model.ColorReceivedTwo" />
+       </div>
+       <div class="col-md-12 col-xs-12">
+           <input name="ColorSearched" value="@Model.ColorSearched" />
+           <input name="ColorSearchedHex" value="@Model.ColorSearchedHex" style="background-color: @Model.ColorSearchedHex" />
+           <input name="ColorReceived" value="@Model.ColorReceived" />
+           <input name="ColorReceivedHex" value="@Model.ColorReceivedHex" style="background-color: @Model.ColorReceivedHex" />
+           <input name="ColorReceivedTwo" value="@Model.ColorReceivedTwo" />
+           <input name="ColorReceivedHexTwo" value="@Model.ColorReceivedHexTwo" style="background-color: @Model.ColorReceivedHexTwo" />
+           <br />
 
-        <input name="ColorReceivedHexTwo" value="@Model.ColorReceivedHexTwo" style="background-color: @Model.ColorReceivedHexTwo"/>
-        <br />
-
-        <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-primary" />
-        </div>
-    </form>
+           <div class="form-group">
+               <br />
+               <input type="submit" value="Save" class="btn btn-primary" />
+           </div>
+       </div>
+   </form>
 
 </body>
