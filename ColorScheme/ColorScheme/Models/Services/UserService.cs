@@ -112,6 +112,11 @@ namespace ColorScheme.Models.Services
            return _context.User.Any(i => i.ID == id);
         }
 
+        /// <summary>
+        /// Deletes one saved color scheme
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task DeleteScheme(int id)
         {
             ColorSchemeController schemeController = new ColorSchemeController(_context);

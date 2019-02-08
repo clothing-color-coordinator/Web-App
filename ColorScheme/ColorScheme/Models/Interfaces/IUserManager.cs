@@ -31,6 +31,7 @@ namespace ColorScheme.Models.Interfaces
         //checks if instance exists
         bool UserExist(int id);
 
+        //deletes one saved color scheme
         Task DeleteScheme(int id);
     }
 }
