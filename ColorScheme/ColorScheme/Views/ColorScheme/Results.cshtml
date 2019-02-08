@@ -1,17 +1,18 @@
-﻿@model ColorScheme.Models.ColorSchemeM
+@model ColorScheme.Models.ColorSchemeM
 
 
 
 @{
     ViewData["Title"] = "ColorScheme";
-    Layout = "_Layout";
+    Layout = "_Layout2";
 }
 
 <body>
 
-    <h4>Results</h4>
+    @*<h4>Results</h4>*@
     <br />
    <div class="col-md-4 col-xs-12"></div>
+
     <form asp-action="Create" method="post" name="colorScheme" class="col-md-4 col-xs-12">
         <div class="form-group">
             <label>Username</label>
@@ -37,4 +38,5 @@
             <input type="submit" value="Save" class="btn btn-primary" />
         </div>
     </form>
+
 </body>
