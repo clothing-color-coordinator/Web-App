@@ -1,19 +1,18 @@
 body {
     background-color: azure;
     text-align: center;
+    font-size: 5vh;
+}
+
+nav{
+    font-size: 3vh;
 }
 
 
-h1{
-    color: red;
-}
 
-img {
+
+/*img {
     opacity: 0.5;
-}
-/*p {
-    font-size:xx-large;
-    font-weight:bolder;
 }*/
 
 
