@@ -123,33 +123,6 @@ namespace XUnitTestProject1
             }
         }
 
-        [Fact]
-        public async void DeleteColorSchemeWorks()
-        {
-            DbContextOptions<ColorSchemeDbContext> options =
-                new DbContextOptionsBuilder<ColorSchemeDbContext>
-                ().UseInMemoryDatabase("DeleteColorScheme").Options;
-
-            using (ColorSchemeDbContext context = new ColorSchemeDbContext(options))
-            {
-                // arrange
-                ColorSchemeM color = new ColorSchemeM();
-                color.UserMID = 1;
-                color.SchemeType = "TriadicPalette";
-
-                // Act
-                ColorSchemeService service = new ColorSchemeService(context);
-
-                await service.SaveColorScheme(color);
-                await service.DeleteColorScheme(1);
-
-                var deleted = context.colorScheme.FirstOrDefault(u => u.UserMID == color.UserMID);
-
-                // Assert
-                Assert.Null(deleted);
-
-            }
-        }
 
         [Fact]
         public async void DeleteColorSchemeWorksAgain()

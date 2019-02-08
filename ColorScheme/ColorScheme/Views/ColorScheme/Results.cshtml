@@ -1,17 +1,20 @@
-﻿@model ColorScheme.Models.ColorSchemeM
+@model ColorScheme.Models.ColorSchemeM
 
 
 
 @{
+
     ViewData["Title"] = "Color Search";
-    Layout = "_Layout";
+    Layout = "_Layout2";
+
 }
 
 <body>
 
-    <h4>Results</h4>
+    @*<h4>Results</h4>*@
     <br />
    <div class="col-md-4 col-xs-12"></div>
+
     <form asp-action="Create" method="post" name="colorScheme" class="col-md-4 col-xs-12">
         <div class="form-group">
             <label>Username</label>
@@ -21,13 +24,7 @@
         </div>
         <div class="form-group">
 
-            <label asp-for="SchemeType" class="control-label"></label>
-            <select name="SchemeType" class="form-control">
-                <option>ComplementaryPalette</option>
-                <option>SplitComplementaryPalette</option>
-                <option>TriadicPalette</option>
-                <option>AnalogousPalette</option>
-            </select>
+            <input name="SchemeType" value="@Model.SchemeType" />
 
         </div>
         <input name="ColorSearched" value="@Model.ColorSearched" />
@@ -43,4 +40,5 @@
             <input type="submit" value="Save" class="btn btn-primary" />
         </div>
     </form>
+
 </body>
