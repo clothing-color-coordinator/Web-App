@@ -8,13 +8,23 @@ Color Cord is an MVC Core Web App that utilizes a custom color matching API.  Th
 
 ## Usage
 
+On the landing page, the user can navigate to Color Search or Users 
+
 ![home](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/home.JPG)
+
+Users can enter a color to search and select a preferred color palette from the dropdown box
 
 ![search](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/search.JPG)
 
+The results page displays color matches along with the corresponding hex codes.  The user can select their name from the dropdown box and save the results.
+
 ![results](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/results.JPG)
 
+Users can edit their username, access saved color schemes, and delete themselves from the system
+
 ![users](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/users.JPG)
+
+By clicking the "My saved colors" link, users are able to view and delete color matches that have been previously saved
 
 ![savedmatches](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/savedmatches.JPG)
 
