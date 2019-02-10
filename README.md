@@ -1,12 +1,23 @@
 # Color Cord Web App
 
-An MVC Core Web App that utilizes a custom color matching API and provides corresponding color schemes based on user input
+![azure deployment](https://colorscheme.azurewebsites.net/)
 
-## Authors: Andrew Hinojosa, Jason Few, Deziree Teague
+## Introduction
 
-## Summary:
+Color Cord is an MVC Core Web App that utilizes a custom color matching API.  The purpose of this application is to give users a tool to make color coordination quick and easy. Whether it's finding the perfect outfit to wear, picking out home decor, or figuring out the right shade of paint, Color Cord can help!  Users are able to search for color matches based on a preferred color palette such as complementary, analogous, or triadic.  Users may also save their results for future reference. 
 
-When the user hit the home page there will be 2 links one for pets and one for the individual. Once the user clicks the link, they will be redirected to their saved color scheme page, there will be seperate saved paged for pets and people. If there are saved results, the user can update or delete their saved color schemes. Otherwise the user can go to the search page and search for a color harmony and save if they like the color scheme.
+## Usage
+
+![home](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/home.JPG)
+
+![search](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/search.JPG)
+
+![results](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/results.JPG)
+
+![users](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/users.JPG)
+
+![savedmatches](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/savedmatches.JPG)
+
 
 ## API (JSON format)
 Color Wheel API
