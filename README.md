@@ -8,7 +8,7 @@ Color Cord is an MVC Core Web App that utilizes a custom color matching API.  Th
 
 ## Usage
 
-On the landing page, the user can navigate to Color Search or Users 
+On the landing page, the user can navigate to "Color Search" or "Users"
 
 ![home](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/home.JPG)
 
@@ -28,16 +28,13 @@ By clicking the "My saved colors" link, users are able to view and delete color 
 
 ![savedmatches](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/savedmatches.JPG)
 
+## Database Schema
 
-## API (JSON format)
-Color Wheel API
+![colormatchdb](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/colormatchdb.JPG)
 
-#### Version:
-```
-Version 1.0  February 01, 2019
-```
+The database contains two tables: one for the individual user and another for color schemes.  The individual has a 1:many relationsip with color schemes because each individual user can have many color schemes associated with their user ID.  User id is a foreign key in the color scheme table.  The color scheme table also has an enum "Scheme Type" which refers to the various color palettes available to choose from.    
 
-## Web App Wireframes
+## Wireframes
 
 Home Page
 
@@ -51,9 +48,22 @@ My Results
 
 ![myHuman Results](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/3-myHuman-Results.png)
 
+## Tools Used
 
-## Web App Database Wireframes
+Visual Studio, GitHub, LINQ, Bootstrap, Microsoft.AspNetCore, Microsoft.EntityFramework, Microsoft.NET.Test.Sdk 
 
-![colormatchdb](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/colormatchdb.JPG)
+## API 
 
-The database contains two tables: one for the individual user and another for their pet.  The individual has 0-1: 1 relationsip with the pet using the primary id from the pet as a foreign key.
+Color Wheel API ![api](https://github.com/clothing-color-coordinator/API)
+
+## Contributors
+
+Jason Few, Deziree Teague, Andrew Hinojosa
+
+#### MIT License
+
+![mit](https://github.com/clothing-color-coordinator/Web-App/blob/master/LICENSE)
+
+#### Version
+
+Version 1.0  February 01, 2019
