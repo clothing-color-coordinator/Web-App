@@ -1,22 +1,40 @@
 # Color Cord Web App
 
-An MVC Core Web App that utilizes a custom color matching API and provides corresponding color schemes based on user input
+Deployed on Azure: ![azure deployment](https://colorscheme.azurewebsites.net/)
 
-## Authors: Andrew Hinojosa, Jason Few, Deziree Teague
+## Introduction
 
-## Summary:
+Color Cord is an MVC Core Web App that utilizes a custom color matching API.  The purpose of this application is to give users a tool to make color coordination quick and easy. Whether it's finding the perfect outfit to wear, picking out home decor, or figuring out the right shade of paint, Color Cord can help!  Users are able to search for color matches based on a preferred color palette such as complementary, analogous, or triadic.  Users may also save their results for future reference. 
 
-When the user hit the home page there will be 2 links one for pets and one for the individual. Once the user clicks the link, they will be redirected to their saved color scheme page, there will be seperate saved paged for pets and people. If there are saved results, the user can update or delete their saved color schemes. Otherwise the user can go to the search page and search for a color harmony and save if they like the color scheme.
+## Usage
 
-## API (JSON format)
-Color Wheel API
+On the landing page, the user can navigate to "Color Search" or "Users"
 
-#### Version:
-```
-Version 1.0  February 01, 2019
-```
+![home](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/home.JPG)
 
-## Web App Wireframes
+Users can enter a color to search and select a preferred color palette from the dropdown box
+
+![search](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/search.JPG)
+
+The results page displays color matches along with the corresponding hex codes.  The user can select their name from the dropdown box and save the results.
+
+![results](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/results.JPG)
+
+Users can edit their username, access saved color schemes, and delete themselves from the system
+
+![users](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/users.JPG)
+
+By clicking the "My saved colors" link, users are able to view and delete color matches that have been previously saved
+
+![savedmatches](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/savedmatches.JPG)
+
+## Database Schema
+
+![colormatchdb](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/colormatchdb.JPG)
+
+The database contains two tables: one for the individual user and another for color schemes.  The individual has a 1:many relationsip with color schemes because each individual user can have many color schemes associated with their user ID.  User id is a foreign key in the color scheme table.  The color scheme table also has an enum "Scheme Type" which refers to the various color palettes available to choose from.    
+
+## Wireframes
 
 Home Page
 
@@ -30,9 +48,22 @@ My Results
 
 ![myHuman Results](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/3-myHuman-Results.png)
 
+## Tools Used
 
-## Web App Database Wireframes
+Visual Studio, GitHub, LINQ, Bootstrap, Microsoft.AspNetCore, Microsoft.EntityFramework, Microsoft.NET.Test.Sdk 
 
-![colormatchdb](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/colormatchdb.JPG)
+## API 
 
-The database contains two tables: one for the individual user and another for their pet.  The individual has 0-1: 1 relationsip with the pet using the primary id from the pet as a foreign key.
+Color Wheel API ![api](https://github.com/clothing-color-coordinator/API)
+
+## Contributors
+
+Jason Few, Deziree Teague, Andrew Hinojosa
+
+#### MIT License
+
+![mit](https://github.com/clothing-color-coordinator/Web-App/blob/master/LICENSE)
+
+#### Version
+
+Version 1.0  February 01, 2019
