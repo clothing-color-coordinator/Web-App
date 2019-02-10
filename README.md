@@ -1,6 +1,6 @@
 # Color Cord Web App
 
-![azure deployment](https://colorscheme.azurewebsites.net/)
+Deployed on Azure: ![azure deployment](https://colorscheme.azurewebsites.net/)
 
 ## Introduction
 
