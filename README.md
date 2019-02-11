@@ -38,15 +38,23 @@ The database contains two tables: one for the individual user and another for co
 
 Home Page
 
-![Home Page](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/1-Homepage.png)
+![Home Page](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/wf-home.JPG)
 
 Color Scheme Search
 
-![Color Scheme Search](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/2-Color-Scheme-Search.png)
+![Color Scheme Search](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/wf-search.JPG)
 
-My Results
+Results
 
-![myHuman Results](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/3-myHuman-Results.png)
+![Results](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/wf-results.JPG)
+
+Users
+
+![Users](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/wf-users.JPG)
+
+Saved Color Matches
+
+![Saved colors](https://github.com/clothing-color-coordinator/Web-App/blob/master/Assets/wf-savedmatches.JPG)
 
 ## Tools Used
 
