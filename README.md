@@ -1,6 +1,11 @@
 # Color Cord Web App
 
-Deployed on Azure: https://colorscheme.azurewebsites.net/
+OLD deployed on Azure: ~~[https://colorscheme.azurewebsites.net/]~~(https://colorscheme.azurewebsites.net/)
+
+```
+New deployment on June 08, 2019
+```
+New deployment on Azure: https://schemecolor.azurewebsites.net 
 
 ## Introduction
 
@@ -64,7 +69,11 @@ Visual Studio, GitHub, LINQ, Bootstrap, Microsoft.AspNetCore, Microsoft.EntityFr
 
 Color Wheel API https://github.com/clothing-color-coordinator/API
 
-## Contributors
+* API Contributors
+- Carlos Castillo
+- Charles Clemenes
+
+## Web Contributors
 
 Jason Few, Deziree Teague, Andrew Hinojosa
 
