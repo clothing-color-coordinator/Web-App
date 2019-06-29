@@ -32,10 +32,11 @@ namespace ColorScheme
             // services.AddDbContext<ColorSchemeDbContext>(options =>
             //options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection"])
             //);
+
             services.AddDbContext<ColorSchemeDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             //options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection"]));
-            options.UseSqlServer(Configuration.GetConnectionString("ProductionConnection")));
-            //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //options.UseSqlServer(Configuration.GetConnectionString("ProductionConnection")));
 
             services.AddScoped<IUserManager, UserService>();
             services.AddScoped<IColorSchemeManager, ColorSchemeService>();
