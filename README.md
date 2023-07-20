@@ -1,7 +1,5 @@
-# Color Cord Web App
-
-  July 19, 2023 (small changes to ensure Web App still running on Azure -Carlos)  
-Deployment on Azure: https://schemecolor.azurewebsites.net 
+# Color Cord Web App  
+    Deployment on Azure: https://schemecolor.azurewebsites.net 
 
 ## Introduction
 
@@ -83,4 +81,5 @@ https://github.com/clothing-color-coordinator/Web-App/blob/master/LICENSE
 
 #### Version
 
-Version 1.0  February 01, 2019
+> Version 1.0  February 01, 2019  
+> Version 1.1 July 19, 2023 (small changes to ensure Web App still running on Azure -Carlos)  
