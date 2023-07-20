@@ -1,5 +1,6 @@
 # Color Cord Web App  
-    Deployment on Azure: https://schemecolor.azurewebsites.net 
+Deployment on Azure:   
+      https://schemecolor.azurewebsites.net 
 
 ## Introduction
 
