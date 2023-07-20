@@ -1,11 +1,7 @@
 # Color Cord Web App
 
-OLD deployed on Azure: ~~[https://colorscheme.azurewebsites.net/](https://colorscheme.azurewebsites.net/)~~
-
-```
-New deployment on June 08, 2019
-```
-New deployment on Azure: https://schemecolor.azurewebsites.net 
+  July 19, 2023 (small changes to ensure Web App still running on Azure -Carlos)  
+Deployment on Azure: https://schemecolor.azurewebsites.net 
 
 ## Introduction
 
