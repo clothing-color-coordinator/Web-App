@@ -9,7 +9,7 @@ New deployment on Azure: https://schemecolor.azurewebsites.net
 
 ## Introduction
 
-Color Cord is an MVC Core Web App that utilizes a custom color matching API.  The purpose of this application is to give users a tool to make color coordination quick and easy. Whether it's finding the perfect outfit to wear, picking out home decor, or figuring out the right shade of paint, Color Cord can help!  Users are able to search for color matches based on a preferred color palette such as complementary, analogous, or triadic.  Users may also save their results for future reference. 
+Color Cord is an MVC Core Web App that utilizes a custom color-matching API.  The purpose of this application is to give users a tool to make color coordination quick and easy. Whether it's finding the perfect outfit to wear, picking out home decor, or figuring out the right shade of paint, Color Cord can help!  Users are able to search for color matches based on a preferred color palette such as complementary, analogous, or triadic.  Users may also save their results for future reference. 
 
 ## Usage
 
@@ -75,7 +75,11 @@ Color Wheel API https://github.com/clothing-color-coordinator/API
 
 ## Web Contributors
 
-Jason Few, Deziree Teague, Andrew Hinojosa
+[Carlos Castillo](https://github.com/castillocarlosr]) , Jason Few, Deziree Teague, Andrew Hinojosa   
+>  How to contact Carlos? 
+```sh
+xxp7cl@m.hackerx.org 
+```
 
 #### MIT License
 
