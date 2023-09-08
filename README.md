@@ -2,6 +2,7 @@
 Deployment on Azure:   
       https://schemecolor.azurewebsites.net 
 
+(NOTE:) I may need to turn off the Web App from time to time in order to keep hosting costs down.
 ## Introduction
 
 Color Cord is an MVC Core Web App that utilizes a custom color-matching API.  The purpose of this application is to give users a tool to make color coordination quick and easy. Whether it's finding the perfect outfit to wear, picking out home decor, or figuring out the right shade of paint, Color Cord can help!  Users are able to search for color matches based on a preferred color palette such as complementary, analogous, or triadic.  Users may also save their results for future reference. 
